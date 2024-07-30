@@ -1,24 +1,34 @@
 import './App.css';
+import { ChakraProvider, Grid, Box, GridItem } from "@chakra-ui/react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Highlights from "./components/Highlights";
+import Testimonials from "./components/Testimonials";
+// import About from "./components/About";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
-      <header><image src='logo.png' /></header>
-        <nav>
-          <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Menu</a></li>
-            <li><a href='#'>Order online</a></li>
-            <li><a href='#'>Reservations</a></li>
-            <li><a href='#'>Login</a></li>
-          </ul>
-        </nav>
-      <main></main>
-      <footer>
-        <p>Copyright</p>
-      </footer>
-    </>
+    <ChakraProvider>
+        <main>
+        <Grid
+          templateAreas={`"header"
+                          "footer"`}
+          gridTemplateRows={'20% 80%'}
+          gridTemplateColumns={'repeat(1,1fr)'}
+          gap='1'
+          minHeight="100vh"
+        >
+          <GridItem area={'header'}>
+          <Header />
+          </GridItem>
+          <GridItem  area={'footer'}>
+          <Footer />
+          </GridItem>          
+        </Grid>
+        </main>
+    </ChakraProvider>
+
   );
 }
 
