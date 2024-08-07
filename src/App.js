@@ -1,8 +1,11 @@
 import './App.css';
 import { ChakraProvider, Grid, Box, GridItem } from "@chakra-ui/react";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import { Routes, Route, Link } from "react-router-dom";
+import About from "./components/About";
+import Homepage from "./components/Homepage";
 import Highlights from "./components/Highlights";
+import BookingPage from "./components/BookingPage";
 import Testimonials from "./components/Testimonials";
 // import About from "./components/About";
 import Footer from "./components/Footer";
@@ -11,21 +14,13 @@ function App() {
   return (
     <ChakraProvider>
         <main>
-        <Grid
-          templateAreas={`"header"
-                          "footer"`}
-          gridTemplateRows={'20% 80%'}
-          gridTemplateColumns={'repeat(1,1fr)'}
-          gap='1'
-          minHeight="100vh"
-        >
-          <GridItem area={'header'}>
-          <Header />
-          </GridItem>
-          <GridItem  area={'footer'}>
-          <Footer />
-          </GridItem>          
-        </Grid>
+        <Routes> 
+            <Route path="/" element={<Homepage />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/highlights" element={<Highlights />}></Route>
+            <Route path="/booking" element={<BookingPage />}></Route>
+          </Routes>
+       
         </main>
     </ChakraProvider>
 

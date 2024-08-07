@@ -12,32 +12,20 @@ const Header = () => {
 
   
   return (
-    <Center
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      backgroundColor="#fff"
-      maxWidth="850px" margin="0 auto"  height={"20%"}
-      className="headerCenter"
-    >
-          <nav>
-            <Grid gap="5" templateColumns='repeat(8, 1fr)' templateRows='repeat(1, 1fr)'>
-                <GridItem className="gridItem" colSpan={2}><Image src={logoImage} /></GridItem>
-                <GridItem className="gridItem" colSpan={1}><Link to="/" className="nav-item">Homepage</Link></GridItem>
-                <GridItem colSpan={1}><Link to="/about" className="nav-item">About</Link></GridItem>
-                <GridItem colSpan={1}><Link to="/highlights" className="nav-item">Contact</Link></GridItem>
-                <GridItem colSpan={1}><Link to="/highlights" className="nav-item">Contact</Link></GridItem>
-                <GridItem colSpan={1}><Link to="/highlights" className="nav-item">Contact</Link></GridItem>
-                <GridItem colSpan={1}><Link to="/highlights" className="nav-item">Contact</Link></GridItem>
-            </Grid>
+      <>
+          <nav className="container">
+            <ul>
+                <li ><Image src={logoImage} /></li>
+                <li ><Link to="/" className="nav-item">Homepage</Link></li>
+                <li ><Link to="/about" className="nav-item">About</Link></li>
+                <li ><Link to="/highlights" className="nav-item">Menu</Link></li>
+                <li ><Link to="/booking" className="nav-item">Reservations</Link></li>
+                <li ><Link to="/highlights" className="nav-item">Order Online</Link></li>
+                <li ><Link to="/highlights" className="nav-item">Login</Link></li>
+            </ul>
 	        </nav>
-          <Routes> 
-            <Route path="/" element={""}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/highlights" element={<Highlights />}></Route>
-          </Routes>
-    </Center>
+          
+          </>
   );
 };
 

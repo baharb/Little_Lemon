@@ -1,10 +1,10 @@
 import React from "react";
 import {Box, Grid, GridItem} from "@chakra-ui/react";
 
-const About = () => {
+const BookingPage = () => {
   return (
     <Box backgroundColor="#18181b">
-      <about>
+      <Box>"sdfsdfsd"</Box>
       <Grid
         templateRows='repeat(3, 1fr)'
         templateColumns='repeat(2, 1fr)'
@@ -15,8 +15,7 @@ const About = () => {
         <GridItem rowSpan={1} colSpan={1} bg='green' />
         <GridItem rowSpan={1} colSpan={1} bg='black' />
       </Grid>
-      </about>
     </Box>
   );
 };
-export default About;
+export default BookingPage;

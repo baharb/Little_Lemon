@@ -1,0 +1,112 @@
+.cards{
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  max-width: 65rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+#specials-section{
+  width: 65rem;
+  margin: 1rem auto;
+  font-family: 'Markazi text';
+  font-size: 2.5rem;
+}
+
+.specials{
+  padding: 5rem 0;
+}
+
+@media (max-width: 780px) {
+  .cards{
+    flex-flow: column;
+  }
+
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 100%;
+  min-height: 27rem;
+  background-color: #EDEFEE;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 1rem;
+}
+
+.cards > div > img{
+  height: 185px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.heroImg{
+  border-radius: 16px;
+  object-fit:cover;
+  height: 25rem;
+  margin-bottom: -3rem;
+  position:'relative';
+  margin-top: 1rem;
+  width:100%;
+}
+
+.hero{
+  background-color: #495E57;
+  display: block;
+  /* margin: 0 auto; */
+}
+
+.heroText{
+  /* padding: 10px; */
+}
+
+nav div{
+  margin: auto;
+}
+
+.titleBig{
+  font-family: 'Markazi Text';
+  font-weight: normal;
+  font-size: 64px;
+  color: #F4CE14;
+}
+
+.subTitle{
+  font-family: 'Markazi Text';
+  font-weight: normal;
+  font-size: 40px;
+  color: #EDEFEE;
+}
+
+.text{
+  /* font-family: 'Karla'; */
+  font-weight: normal;
+  font-size: 18px;
+  color: #EDEFEE;
+}
+
+.button{
+  color: #333333;
+  background-color: #F4CE14;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 16px;
+  padding: 10px;
+  width: 200px;
+  margin-top: 30px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

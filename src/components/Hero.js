@@ -1,23 +1,31 @@
 import React from "react";
-import {Box, Flex} from "@chakra-ui/react";
+import {Box, Button, Grid, GridItem, Image} from "@chakra-ui/react";
+import "../styles/Hero.css";
+
+import restaurantImg from '../assets/restauranfood.jpg';
 
 const Hero = () => {
-  return (
-    <Box backgroundColor="#18181b">
-      <hero>
-        <Flex
-          margin="0 auto"
-          px={12}
-          color="white"
-          justifyContent="center"
-          alignItems="center"
-          maxWidth="1024px"
-          height={16}
-        >
-          <p>Pete • © 2022</p>
-        </Flex>
+  return (    
+      <hero className="hero" >
+        <div className="containerHero" >        
+          <div className="heroText">
+            <h1 className="titleBig">Little Lemon</h1>
+            <h2 className="subTitle">Chicago</h2>
+            <h6 className="text">We are a family owned mediterranean restaurant, focused on traditional recipes served with a modern twist. </h6>
+            <h6 className="button">
+              Reserve a Table
+            </h6>
+          </div>
+          <div>
+            <Image  className="heroImg"
+            src={restaurantImg} 
+            
+            />
+          </div>
+        </div>
+        
       </hero>
-    </Box>
+    
   );
 };
 export default Hero;
