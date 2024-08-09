@@ -1,0 +1,163 @@
+#footer-section{
+  background-color: #495E57;
+  width: 100%;
+  min-height: 25rem;
+  font-family: 'Markazi text';
+  margin: 0 auto;
+  text-align: center;
+  padding: 4.5rem 0;
+}
+
+#footer-section h1{
+  font-weight: 500;
+  font-size: 36px;
+  color: #F4CE14;
+  font-family: 'Markazi Text';
+}
+
+.footer{
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  max-width: 65rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.footerCol{
+  width: 15rem;
+  height: 12rem; 
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerCol ul{
+list-style-type: none;
+}
+
+.footerCol ul li{
+  margin: 0 0 0.5rem 0;
+}
+
+.stars{
+  text-align: left;
+  margin: 1rem;
+  
+}
+
+.star{
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.logoFooter{
+  width: 6rem;
+}
+
+.profileRate{
+  text-align: left;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.headF{
+  margin-bottom: 0.5rem;
+  font-family: Karla, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #F4CE14;
+}
+
+.comment{
+  padding: 1rem;
+  font-family: Karla, sans-serif;
+  font-size: 14px;
+  text-align: left;
+  color: #fff;
+}
+
+
+
+@media (max-width: 780px) {
+  .footer{
+    flex-flow: column;
+  }
+
+  .hero{
+    padding: 3rem 3rem 0 3rem;
+  }
+
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 100%;
+  min-height: 27rem;
+  background-color: #EDEFEE;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 1rem;
+}
+
+
+
+.cards > div > img{
+  height: 185px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.heroImg{
+  border-radius: 16px;
+  object-fit:cover;
+  height: 25rem;
+  position:'relative';
+  width:100%;
+  margin: 1rem 3rem -3rem 0;
+}
+
+.hero{
+  background-color: #495E57;
+  display: block;
+  /* margin: 0 auto; */
+}
+
+
+nav div{
+  margin: auto;
+}
+
+.titleBig{
+  font-family: 'Markazi Text';
+  font-weight: normal;
+  font-size: 64px;
+  color: #F4CE14;
+}
+
+.subTitle{
+  font-family: 'Markazi Text';
+  font-weight: normal;
+  font-size: 40px;
+  color: #EDEFEE;
+}
+
+
+.button{
+  color: #333333;
+  background-color: #F4CE14;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 16px;
+  padding: 10px;
+  width: 200px;
+  margin-top: 30px;
+}
+
+
