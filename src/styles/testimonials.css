@@ -84,6 +84,10 @@
     flex-flow: column;
   }
 
+  .hero{
+    padding: 3rem 3rem 0 3rem;
+  }
+
 }
 
 .card{
@@ -108,10 +112,9 @@
   border-radius: 16px;
   object-fit:cover;
   height: 25rem;
-  margin-bottom: -3rem;
   position:'relative';
-  margin-top: 1rem;
   width:100%;
+  margin: 1rem 3rem -3rem 0;
 }
 
 .hero{
