@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className="footerCol">
 
-              <div className="comment">
+              <div className="commentCol">
                 <h6 className="headF">Doormat Navigation</h6>
                 <ul>
                   <li>Home</li>
@@ -33,7 +33,7 @@ const Footer = () => {
               </div>
             </div>            
             <div className="footerCol">
-            <div className="comment">
+            <div className="commentCol">
             <h6 className="headF">Contact</h6>
                 <ul>
                   <li>1950 E 17th St, No.212</li>
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
             </div>           
             <div className="footerCol">
-              <div className="comment">
+              <div className="commentCol">
                 <h6 className="headF">Social Media</h6>
                   <ul>
                     <li><a href='https://instagram.com'>
