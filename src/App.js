@@ -20,8 +20,7 @@ function App() {
             <Route path="/highlights" element={<Highlights />}></Route>
             <Route path="/booking" element={<BookingPage />}></Route>
           </Routes>
-       
-        </main>
+       </main>
     </ChakraProvider>
 
   );

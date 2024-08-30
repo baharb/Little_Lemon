@@ -6,7 +6,7 @@ import restaurantImg from '../assets/restauranfood.jpg';
 
 const Hero = () => {
   return (    
-      <hero className="hero" >
+      <div className="hero" >
         <div className="containerHero" >        
           <div className="heroText">
             <h1 className="titleBig">Little Lemon</h1>
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
         </div>
         
-      </hero>
+      </div>
     
   );
 };
