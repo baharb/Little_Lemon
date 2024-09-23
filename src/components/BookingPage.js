@@ -2,92 +2,46 @@ import React, { useEffect } from "react";
 import {Box, Grid, GridItem} from "@chakra-ui/react";
 import BookingForm from "./BookingForm";
 import { useReducer, useState } from "react";
-// import fetchAPI from api;
+import {fetchAPI, submitAPI} from "../api";
+import { useNavigate } from 'react-router-dom';
 
 const BookingPage = () => {
+  const navigate = useNavigate();
+  const initializeTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
-  const initialState = {
-    availableTimes: [17,18,19,20,21],
-    selectedDate: null,
- }
+  const updateTimesF = (state, action) => {
+    console.log(action.payload + "----"+ action.payload)
+    return fetchAPI(new Date(action.payload));
+  }
 
-
-  const [availableTimes, setAvailableTimes] = useState(initialState);
-
-  const selectedDate = "";
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-
-  // function fetchAPI(date) {
-  //   console.log("dateee:"+date)
-  //   const apiUrl = `https://raw.githubusercontent.com/courseraap/capstone/main/api.js?date=${date}`;
+  const [state, dispatch] = useReducer(updateTimesF,initializeTimes);
   
-  //   return fetch(apiUrl)
-  //     .then((response) => {
-  //       console.log(response)
-  //       response.json()})
-  //     .then((data) => {
-  //       console.log("timessss: "+data)
-  //       return data.availableTimes;
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching available times:", error);
-  //       throw error;
-  //     });
-  // }
+  const dispatchDate = (selectedDate) => {
+    dispatch({ type: 'UPDATE_SELECTED_DATE', payload: selectedDate });
+  };
 
-  function updateTimes (selectedDate) {    
-    if(selectedDate != ""){
-      const today = new Date(selectedDate);
-
-      fetchAPI(selectedDate)
-        .then((availableTimes) => {
-          console.log("availableTi: " + availableTimes)
-          // Update the booking form with the available times
-          const timeSelect = document.getElementById("resTime");
-          console.log(timeSelect)
-          timeSelect.innerHTML = "";
-          // availableTimes = availableTimes
-          availableTimes.forEach((time) => {
-            const option = document.createElement("option");
-            option.value = time;
-            option.textContent = time;
-            timeSelect.appendChild(option);
-            return availableTimes
-          });
-        })
-        .catch((error) => {
-          console.error("Error fetching available times:", error);
-        });
-        
-        }
+  const submitForm = (values) => {
+    // e.preventDefault();
+    submitAPI(values);
+    console.log("trueeeee")
+    navigate("/confirmedBooking")
+    // setIsFormSubmitted(true)
   }
-
-  const reducer = (state, action) => {
-    console.log("reducer: "+action.type+"-"+action.payload)
-    switch(action.type){
-      case "UPDATE_TIMES":
-        return updateTimes(action.payload);
-      default:
-        return state;
-    }
-  }
-
-  const [state, dispatchDate] = useReducer(reducer,availableTimes);
   
-  const handleSumbit = (e) => {
-    e.preventDefault();
-    setIsFormSubmitted(true)
-  }
   return (
     <Box>
-      <BookingForm 
+      <BookingForm state={state} 
+      dispatchDate={dispatchDate}
+      submitForm={submitForm} />
+      {/* <BookingForm 
         availableTimes={availableTimes}
         setAvailableTimes={setAvailableTimes}
         dispatchDate={dispatchDate} 
         handleDateChange = {(selectedDate) => dispatchDate({type: "UPDATE_TIMES", payload: selectedDate})}
         state={state}
-        onFormSubmit={handleSumbit} />
-    </Box>
+        resDate={selectedDate}
+        onFormSubmit={handleSumbit} />*/}
+    </Box> 
   );
 };
 export default BookingPage;

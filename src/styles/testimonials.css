@@ -1,8 +1,8 @@
 #testimonials-section{
   background-color: #495E57;
   width: 100%;
-  min-height: 25rem;
-  font-family: 'Markazi text';
+  min-height: 25rem;  
+  font-family: Karla !important;;
   margin: 0 auto;
   text-align: center;
   padding: 4.5rem 0;
@@ -12,7 +12,8 @@
   font-weight: 500;
   font-size: 36px;
   color: #F4CE14;
-  font-family: 'Markazi Text';
+  
+  font-family: Karla !important;;
 }
 
 .testimonials{
@@ -64,14 +65,14 @@
 
 .proName{
   margin: 1.5rem;
-  font-family: Karla, sans-serif;
+  font-family: Karla !important;
   font-weight: bold;
   font-size: 14px;
 }
 
 .comment{
   padding-left: 1rem;
-  font-family: Karla, sans-serif;
+  font-family: Karla !important;
   font-size: 14px;
   text-align: left;
   padding-top: 0.5rem;
@@ -128,19 +129,6 @@ nav div{
   margin: auto;
 }
 
-.titleBig{
-  font-family: 'Markazi Text';
-  font-weight: normal;
-  font-size: 64px;
-  color: #F4CE14;
-}
-
-.subTitle{
-  font-family: 'Markazi Text';
-  font-weight: normal;
-  font-size: 40px;
-  color: #EDEFEE;
-}
 
 
 .button{

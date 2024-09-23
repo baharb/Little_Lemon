@@ -27,6 +27,12 @@ input, select{
     font-size: 17px !important;
 }
 
+.button:disabled{
+    background-color: darkgrey;
+    color: #e4e0e0;
+}
+
 .buttonField{
     text-align: center;
 }
+

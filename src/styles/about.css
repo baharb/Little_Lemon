@@ -54,14 +54,14 @@ nav div{
 }
 
 .titleBigAbout{
-  font-family: 'Markazi Text';
+  font-family: Karla !important;
   font-weight: normal;
   font-size: 64px;
   color: #000;
 }
 
 .subTitleAbout{
-  font-family: 'Markazi Text';
+  font-family: Karla !important;
   font-weight: normal;
   font-size: 40px;
   color: #000;

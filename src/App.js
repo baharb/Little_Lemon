@@ -6,6 +6,7 @@ import About from "./components/About";
 import Homepage from "./components/Homepage";
 import Highlights from "./components/Highlights";
 import BookingPage from "./components/BookingPage";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 import Testimonials from "./components/Testimonials";
 // import About from "./components/About";
 import Footer from "./components/Footer";
@@ -19,7 +20,8 @@ function App() {
             <Route path="/about" element={<About />}></Route>
             <Route path="/highlights" element={<Highlights />}></Route>
             <Route path="/booking" element={<BookingPage />}></Route>
-          </Routes>
+            <Route path="/confirmedBooking" element={<ConfirmedBooking />}></Route> 
+        </Routes>
        </main>
     </ChakraProvider>
 

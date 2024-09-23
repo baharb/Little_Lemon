@@ -33,34 +33,13 @@
   /* margin: 0 auto; */
 }
 
-.heroText{
-  /* padding: 10px; */
-}
+
 
 nav div{
   margin: auto;
 }
 
-.titleBig{
-  font-family: 'Markazi Text';
-  font-weight: normal;
-  font-size: 64px;
-  color: #F4CE14;
-}
 
-.subTitle{
-  font-family: 'Markazi Text';
-  font-weight: normal;
-  font-size: 40px;
-  color: #EDEFEE;
-}
-
-.text{
-  /* font-family: 'Karla'; */
-  font-weight: normal;
-  font-size: 18px;
-  color: #EDEFEE;
-}
 
 .button{
   color: #333333;
