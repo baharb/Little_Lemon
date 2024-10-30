@@ -11,24 +11,14 @@ import {
 
 const BookingForm = (
     { 
-      availableTimes,
-      setAvailableTimes,
       dispatchDate,
       state,
       submitForm,
-      isFormSubmitted,
     }) => {
-
-  // const [formValues, setFormValues] = useState({
-  //   resDate: resDate !== "" ? resDate: "",
-  //   resTime: "",
-  //   guests: 1,
-  //   occasion: "Birthday",
-  //   disabled: true,
-  // });
   
   const formik = useFormik({
     initialValues: {
+      name: "",
       resDate: "",
       resTime: "17:00",
       occasion: "Birthday",
@@ -40,45 +30,51 @@ const BookingForm = (
     validationSchema: Yup.object().shape({
       resDate: Yup.string().required('Reservation Date is required'),
       guests: Yup.number().min(1).max(10).required("Guests' number is required"),
+      name: Yup.string().required("Name is required"),
       // Add more fields and validation rules as needed
     }),
   });
 
 
-
-
-  // const handleOnChange = (e) =>{     
-  //   setFormValues({
-  //     ...formValues,
-  //     [e.target.name]: e.target.value,
-  //     // disabled: (formValues.guests >= 1 && formValues.resTime != "")
-  //   });
-  //   console.log([e.target.name]+"-"+ e.target.value)
-  //   console.log((formValues.guests >= 1) +"---"+(formValues.resTime))
-  // }
-
   const handleDateSelection = (event) =>{
     const selectedDate = event.target.value;
     // resDate = selectedDate
-    console.log("dateeee:"+formik.values.guests +"-"+formik.values.occasion+"-"+
-      formik.values.resDate+"-"+formik.values.resTime
-    )
+    // console.log(event.target.value);
+    //   formik.values.resDate+"-"+formik.values.resTime
+    // )
     formik.handleChange(event);
     
     dispatchDate(selectedDate)
   }
-
-  // const handleDateChange = (event) => {
-  //   const newDate = event.target.value;
-  //   formik.handleChange(event); // Call Formik's handleChange method to update the form field value
-  //   updateTimes(newDate);
-  // };
 
   return (
     <div className="bookingForm">
       <form onSubmit={(e) => { e.preventDefault(); formik.handleSubmit(e)}}>
         <fieldset>
         <h2 className="subTitle">Book Now</h2>
+          <div className="field">
+          <FormControl isInvalid={formik.errors.name && formik.touched.name}>
+
+            <FormLabel htmlFor="name">First name & Last name</FormLabel>
+            <Input 
+              id="name" 
+              name="name"
+              data-testid="name"
+              type="input" 
+              onChange={formik.handleChange}              
+              onBlur={formik.handleBlur}               
+              // {...formik.getFieldProps("resDate")}
+              aria-label="Enter your name"
+              required
+              />      
+              <FormErrorMessage>
+                  {(formik.errors.name && formik.touched.name) ?
+                    (
+                      formik.errors.name
+                    ) : ""}
+              </FormErrorMessage>
+            </FormControl>
+          </div>
           <div className="field">
           <FormControl isInvalid={formik.errors.resDate && formik.touched.resDate}>
 
@@ -89,7 +85,9 @@ const BookingForm = (
               data-testid="resDate"
               type="date" 
               onChange={handleDateSelection}              
-              onBlur={formik.handleBlur}               
+              onBlur={formik.handleBlur} 
+              
+              aria-label="Enter your reservation date"              
               // {...formik.getFieldProps("resDate")}
               required
               />      
@@ -113,6 +111,7 @@ const BookingForm = (
               onChange={formik.handleChange}              
               onBlur={formik.handleBlur}
               value={formik.values.resTime}
+              aria-label="Enter your reservation time"
               required>
                  {state && state.map(time => (<option key={time}>{time}</option>))}
             </select>
@@ -139,6 +138,7 @@ const BookingForm = (
               max="10" 
               id="guests" 
               value={formik.values.guests}
+              aria-label="Enter your number of guests"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               required/>
@@ -159,7 +159,8 @@ const BookingForm = (
              name="occasion"
              value={formik.values.occasion}
               onChange={formik.handleChange}              
-              onBlur={formik.handleBlur}
+              onBlur={formik.handleBlur}              
+              aria-label="Select your occasion"
               >
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>
@@ -174,7 +175,9 @@ const BookingForm = (
           </div>
 
           <div className="field buttonField">
-            <button type="submit" id="submit" className="button" 
+            <button type="submit" id="submit" className="button"
+            
+            aria-label="Submit your reservation" 
             disabled={!(formik.values.resDate && 
                         formik.values.resTime && 
                         formik.values.guests && 
