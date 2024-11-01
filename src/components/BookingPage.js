@@ -10,7 +10,7 @@ const BookingPage = () => {
   const initializeTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
   const updateTimesF = (state, action) => {
-    console.log(action.payload + "----"+ action.payload)
+    // console.log(action.payload + "----"+ action.payload)
     return fetchAPI(new Date(action.payload));
   }
 
