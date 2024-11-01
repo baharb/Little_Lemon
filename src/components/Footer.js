@@ -16,17 +16,17 @@ const Footer = () => {
          
           <div className="footer">
             <div className="footerCol">
-              <img className="logoFooter" src={logo} />
+            <a href="/"><img className="logoFooter" src={logo} /></a>
             </div>
             <div className="footerCol">
 
               <div className="commentCol">
                 <h6 className="headF">Doormat Navigation</h6>
                 <ul>
-                  <li>Home</li>
-                  <li>About</li>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#about">About</a></li>
                   <li>menu</li>
-                  <li>Reservations</li>
+                  <li><a href="/booking">Reservations</a></li>
                   <li>Order Online</li>
                   <li>Login</li>
                 </ul>

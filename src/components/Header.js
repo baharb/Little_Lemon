@@ -16,7 +16,7 @@ const Header = () => {
           <nav className="container">
             <ul>
                 <li className={({ isActive }) => (isActive ? 'active' : '')}>
-                  <Image src={logoImage} />
+                <a href="/"><Image src={logoImage} /></a>
                 </li>
                 <li className={({ isActive }) => (isActive ? 'active' : '')}>
                 <NavLink to="/" >Homepage</NavLink></li>

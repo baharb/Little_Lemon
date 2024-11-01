@@ -13,7 +13,7 @@ const Hero = () => {
             <h2 className="subTitle">Chicago</h2>
             <h6 className="text">We are a family owned mediterranean restaurant, focused on traditional recipes served with a modern twist. </h6>
             <h6 className="button">
-              Reserve a Table
+              <a href="/booking">Reserve a Table</a>
             </h6>
           </div>
           <div>
