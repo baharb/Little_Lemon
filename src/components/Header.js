@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import { Box, Grid, GridItem, Image, Center } from "@chakra-ui/react";
 import About from "./About";
 import Hero from "./Hero";
@@ -15,13 +15,21 @@ const Header = () => {
       <>
           <nav className="container">
             <ul>
-                <li ><Image src={logoImage} /></li>
-                <li ><Link to="/" className="nav-item">Homepage</Link></li>
-                <li ><Link to="/about" className="nav-item">About</Link></li>
-                <li ><Link to="/highlights" className="nav-item">Menu</Link></li>
-                <li ><Link to="/booking" className="nav-item">Reservations</Link></li>
-                <li ><Link to="/highlights" className="nav-item">Order Online</Link></li>
-                <li ><Link to="/highlights" className="nav-item">Login</Link></li>
+                <li className={({ isActive }) => (isActive ? 'active' : '')}>
+                  <Image src={logoImage} />
+                </li>
+                <li className={({ isActive }) => (isActive ? 'active' : '')}>
+                <NavLink to="/" >Homepage</NavLink></li>
+                <li className={({ isActive }) => (isActive ? 'active' : '')}>
+                <a href="#about">About</a></li>
+                <li className={({ isActive }) => (isActive ? 'active' : '')}>
+                <a href="#highlight">Menu</a></li>
+                <li className={({ isActive }) => (isActive ? 'active' : '')}>
+                <NavLink to="/booking" >Reservations</NavLink></li>
+                <li className="none">
+                <a href="#">Order Online</a></li>
+                <li>
+                <a href="#">Login</a></li>
             </ul>
 	        </nav>
           

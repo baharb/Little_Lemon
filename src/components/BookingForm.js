@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/booking.css";
 import { useFormik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
+
+import { useNavigate } from 'react-router-dom';
 import {
   FormErrorMessage,
   FormControl,
@@ -16,6 +18,9 @@ const BookingForm = (
       submitForm,
     }) => {
   
+  const navigate = useNavigate();
+  const navigateCall = () => {navigate(-1)}
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -35,6 +40,8 @@ const BookingForm = (
     }),
   });
 
+  
+  
 
   const handleDateSelection = (event) =>{
     const selectedDate = event.target.value;
@@ -184,6 +191,12 @@ const BookingForm = (
                         formik.values.occasion &&
                         !formik.errors.guests)}>
               Make Your reservation
+              </button>
+              <button type="button" id="back" className="button"            
+            aria-label="Back to home" 
+            onClick={navigateCall}
+            >
+              Back
               </button>
           </div>
         </fieldset>

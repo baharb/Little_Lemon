@@ -8,6 +8,11 @@
   margin-top: 2rem;
 }
 
+.orderDelivery:hover{
+  text-decoration: underline;
+
+}
+
 #specials-section{
   width: 65rem;
   margin: 1rem auto;

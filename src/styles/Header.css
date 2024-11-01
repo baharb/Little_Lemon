@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .container{
   /* font-family: 'Markazi Text'; */
   font-size: 16px;
@@ -16,6 +20,16 @@
 .container ul{
   margin: 0 auto;
   max-width: 65rem;
+}
+
+nav ul li:hover{
+  color: #495E57;
+  text-decoration: underline;
+}
+
+.container li .active{
+  color: #495E57;
+  text-decoration: underline;
 }
 
 nav div{

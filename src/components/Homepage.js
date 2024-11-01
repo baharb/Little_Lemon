@@ -26,22 +26,22 @@ function Homepage() {
           minHeight="100vh"
           
         >
-          <GridItem area={'header'}>
+          <GridItem  id="header">
             <Header />
           </GridItem> 
-          <GridItem area={'hero'}>
+          <GridItem  id="hero">
             <Hero />
           </GridItem> 
-          <GridItem area={'highlights'}>
+          <GridItem  id="highlight">
             <Highlights />
           </GridItem> 
-          <GridItem area={'testimonials'}>
+          <GridItem  id="testimonial">
             <Testimonials />
           </GridItem> 
-          <GridItem area={'about'}>
+          <GridItem id="about">
             <About />
           </GridItem>
-          <GridItem  area={'footer'}>
+          <GridItem  id="footer">
             <Footer />
           </GridItem>          
         </Grid>

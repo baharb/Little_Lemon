@@ -23,13 +23,21 @@ input, select{
     border-radius: 6px;
 }
 
+#back{
+    margin-left: 0.5rem;
+}
+
 .bookingForm .button{
     font-size: 17px !important;
 }
 
 .button:disabled{
     background-color: darkgrey;
-    color: #e4e0e0;
+    color: #fff;
+}
+
+.button:hover{
+    color: #fff;
 }
 
 .buttonField{

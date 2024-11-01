@@ -21,7 +21,7 @@ const Card = ({ title, description, imageSrc, price }) => {
          aria-label="description image"
       >{description}</Text>
       <HStack padding="0 15px 10px 15px">
-        <Text  fontSize='xs' color="black">Order a delivery</Text>
+        <Text  fontSize='xs' color="black" className="orderDelivery">Order a delivery</Text>
         <Image  src={delivery} aria-label="delivery image icon"/>
       </HStack>
     </div>

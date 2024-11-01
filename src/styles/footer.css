@@ -41,6 +41,10 @@ list-style-type: none;
   margin: 0 0 0.5rem 0;
 }
 
+.footerCol ul li:hover{
+  text-decoration: underline;
+}
+
 .stars{
   text-align: left;
   margin: 1rem;
